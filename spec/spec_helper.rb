@@ -1,6 +1,6 @@
 require_relative "../config/environment.rb"
 
-RSpec.configure do |config|
+=begin RSpec.configure do |config|
   config.order = :default
 end
 
@@ -35,3 +35,4 @@ def capture_puts
     $stdout = old_stdout
   end
 end
+ =end
