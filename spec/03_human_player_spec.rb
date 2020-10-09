@@ -1,4 +1,4 @@
-require 'spec_helper'
+=begin require 'spec_helper'
 
 describe 'Players::Human' do
   it 'inherits from Player' do
@@ -15,4 +15,4 @@ describe 'Players::Human' do
       expect(human.move(Board.new)).to eq("1")
     end
   end
-end
+end =end
