@@ -1,3 +1,60 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+
+game_type = nil
+while game_type != "exit"
+    puts "----------Welcome to Tic-Tac-Toe!----------"
+    puts ""
+    puts ""
+    puts ""
+    puts "What kind of game would you like to play?"
+    puts ""
+    puts ""
+    puts "1. 1 player game"
+    puts ""
+    puts "2. 2 player game"
+    puts ""
+    puts "3. Computer only game"
+    puts ""
+    puts "Please enter game type selection. To quit type 'exit'"
+    game_type = gets.strip.downcase
+    
+    if game_type.to_i == 1
+        first_player = nil
+        while first_player != "back"
+        puts ""
+        puts "Please pick who will go first 'X'. To go back type 'back'"
+        puts ""
+        puts ""
+        puts "1. Player"
+        puts ""
+        puts "2. Computer"
+        puts ""
+        
+        first_player =  gets.strip.downcase
+        puts ""
+            if first_player.to_i == 1
+                
+                Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Computer.new("O")).play
+                
+            elsif first_player.to_i == 2
+                Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Human.new("O")).play
+            
+            elsif first_player == "back"
+            else
+                puts "Incorrect selection. Please try again."
+            end
+        end
+    elsif game_type.to_i == 2
+
+
+    elsif game_type.to_i == 3
+
+    elsif game_type == "exit"
+        puts "Goodbye!"
+
+    else
+        puts "Incorrect selection. Please try again."
+    end
+end

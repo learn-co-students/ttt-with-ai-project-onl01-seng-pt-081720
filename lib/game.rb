@@ -63,6 +63,7 @@ class Game
 
   def play
     until self.won? || self.draw?
+      puts "#{self.board.display}"
       self.turn
     end
     if self.won?
@@ -70,12 +71,7 @@ class Game
     elsif self.draw?
       puts "Cat's Game!"
     end
-
   end
 
-
-  # provide basic runtime and logic
-  # current player, won? winner
-  #start play turn
 
 end
