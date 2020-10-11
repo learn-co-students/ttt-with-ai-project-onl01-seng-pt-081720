@@ -50,26 +50,35 @@ class Game
 
   def turn
     turn = nil
-    while !self.board.valid_move?(turn)
+    until self.board.valid_move?(turn)
       turn = self.current_player.move(self.board)
       if self.board.valid_move?(turn)
         self.board.update(turn, self.current_player)
         break
       else
-        puts "Invalid selection, please enter selection again."
+        puts ""
+        puts "** Invalid selection, please enter selection again **"
+        puts ""
       end
     end
   end
 
   def play
     until self.won? || self.draw?
-      puts "#{self.board.display}"
       self.turn
     end
     if self.won?
+      puts ""
       puts "Congratulations #{self.winner}!"
+      puts ""
+      self.board.display
+      puts ""
     elsif self.draw?
+      puts ""
       puts "Cat's Game!"
+      puts ""
+      self.board.display
+      puts ""
     end
   end
 

@@ -1,8 +1,9 @@
 module Players
   class Human < Player
 
-    def move(input)
-      
+    def move(board)
+      puts ""
+      puts "#{board.display}"
       puts ""
       puts "Select which space you would like to move to: "
       gets

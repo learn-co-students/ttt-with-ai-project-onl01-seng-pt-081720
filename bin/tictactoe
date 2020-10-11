@@ -34,27 +34,22 @@ while game_type != "exit"
         
         first_player =  gets.strip.downcase
         puts ""
-            if first_player.to_i == 1
-                
+            if first_player.to_i == 1  
                 Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Computer.new("O")).play
-                
             elsif first_player.to_i == 2
                 Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Human.new("O")).play
-            
             elsif first_player == "back"
             else
-                puts "Incorrect selection. Please try again."
+                puts "** Invalid selection, please enter selection again **"
             end
         end
     elsif game_type.to_i == 2
-
-
+        Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O")).play
     elsif game_type.to_i == 3
-
+        Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O")).play
     elsif game_type == "exit"
         puts "Goodbye!"
-
     else
-        puts "Incorrect selection. Please try again."
+        puts "** Invalid selection, please enter selection again **"
     end
 end
