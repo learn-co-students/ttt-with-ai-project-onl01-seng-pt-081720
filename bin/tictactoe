@@ -1,3 +1,29 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+
+
+
+class Start
+    puts "Welcome to TIC TAC TOE"
+    puts ""
+    puts "How  many players? select 1, 2, or 0"
+    input = gets.strip.to_i
+        if input == 1
+            puts "Would you like to have the first turn?"
+            inp = gets.strip.downcase
+            if inp == "y" || inp == "yes"
+                Game.new(Players::Human.new("X"), Players::Computer.new("O"), Board.new).play
+            else
+                Game.new(Players::Computer.new("X"), Players::Human.new("O"), Board.new).play
+    
+            end
+        elsif input == 2
+            Game.new(Players::Human.new("X"), Players::Human.new("O"), Board.new).play
+        elsif input == 0
+            Game.new(Players::Computer.new("X"), Players::Computer.new("O"), Board.new).play
+        end
+end
+
+hi = Start.new
+hi
